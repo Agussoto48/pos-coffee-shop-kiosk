@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+
+# uv
+.python-version
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Env files
+.env
+.env.*
+
+# Dependencies
+.ruff_cache/
+data/

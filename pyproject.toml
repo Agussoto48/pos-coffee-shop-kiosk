@@ -1,0 +1,10 @@
+[project]
+name = "pos-coffee-shop-kiosk"
+version = "0.1.0"
+description = "Point of service kiosk app for coffee shop business"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = ["ruff>=0.15.9"]
