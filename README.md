@@ -317,3 +317,41 @@ pos_coffee_shop_kiosk/
 | Archivo | Descripción |
 |---|---|
 | `create_use_cases.py` | Construye e inyecta todas las dependencias del sistema, conectando cada interfaz con su implementación real. |
+
+
+
+# 2. Aplicación de los principios SOLID
+
+## Single Responsibility Principle
+
+El principio de responsabilidad única establece que cada clase debe tener una sola razón para cambiar. En este sistema, este principio se cumple mediante una clara separación de responsabilidades entre entidades, value objects, repositorios, casos de uso, factories y componentes de infraestructura.
+
+Las entidades como `Product` y `Sale` se encargan exclusivamente de representar y gestionar el estado del dominio. Los value objects como `Money`, `Sku`, `ProductName`, `CategoryName`, `Percentage` y `TaxDescription` encapsulan valores específicos con reglas propias.
+
+Los casos de uso como `RegisterProduct`, `AddCartItem`, `ProcessCheckout` o `GenerateSummaryReport` encapsulan acciones específicas del sistema, sin asumir responsabilidades adicionales. De igual forma, las factories abstractas (`AbstractPaymentMethodFactory`, `AbstractPaymentFactory`) definen contratos de creación, y las factories concretas (`BasicPaymentMethodFactory`, `CashPaymentFactory`, `TapCardPaymentFactory`, `CardPaymentFactory`) se encargan únicamente de construir los objetos de pago.
+
+## Open/Closed Principle
+
+Este principio indica que el sistema debe estar abierto a extensión pero cerrado a modificación. Esto se logra en el diseño mediante el uso de abstracciones.
+
+La incorporación de nuevos métodos de pago puede realizarse creando una nueva clase que implemente `AbstractPaymentMethod`, junto con su factory correspondiente que implemente `AbstractPaymentFactory`, y registrándola en la factory principal. De esta forma, no es necesario modificar los casos de uso ni las clases existentes.
+
+De igual forma, los repositorios pueden cambiar su implementación creando nuevas clases que implementen interfaces como `AbstractProductRepository` o `AbstractSaleRepository`, sin alterar la lógica de negocio. También se pueden agregar nuevos generadores de reportes implementando `AbstractSummaryReportGenerator`.
+
+## Liskov Substitution Principle
+
+El principio de sustitución de Liskov establece que cualquier implementación concreta debe poder reemplazar a su abstracción sin afectar el comportamiento del sistema.
+
+En este diseño, las implementaciones de repositorios (`JsonProductRepository`, `JsonProductCategoryRepository`, `JsonTaxOptionRepository`, `JsonSaleRepository`) pueden ser utilizadas en cualquier lugar donde se espere su respectiva interfaz abstracta. De igual forma, las clases de métodos de pago (`CashPaymentMethod`, `TapCardPaymentMethod`, `CardPaymentMethod`) pueden ser utilizadas como instancias de `AbstractPaymentMethod`. También se puede con `TxtSummaryReportGenerator`, que puede sustituir a `AbstractSummaryReportGenerator`, y con las factories concretas que cumplen los contratos de `AbstractPaymentFactory` y `AbstractPaymentMethodFactory`.
+
+## Interface Segregation Principle
+
+El principio de segregación de interfaces establece que las clases no deben verse obligadas a depender de interfaces que no utilizan. Este principio se refleja en el diseño mediante el uso de múltiples interfaces pequeñas y específicas en lugar de una interfaz general y extensa.
+
+El sistema define interfaces separadas para productos, ventas, categorías, impuestos, métodos de pago y generación de reportes, como `AbstractProductRepository`, `AbstractSaleRepository`, `AbstractTaxOptionRepository`, `AbstractProductCategoryRepository`, `AbstractPaymentMethod` y `AbstractSummaryReportGenerator`.
+
+## Dependency Inversion Principle
+
+El principio de inversión de dependencias establece que los módulos de alto nivel no deben depender de módulos de bajo nivel, sino de abstracciones.
+
+En este sistema, los casos de uso y la lógica de aplicación dependen de interfaces como los repositorios abstractos, las interfaces de métodos de pago, los generadores de reportes y las factories abstractas. No al revés como sería el caso de depender directamente de `JsonProductRepository`, `CashPaymentMethod`, `CardPaymentMethod` o `TxtSummaryReportGenerator`.
