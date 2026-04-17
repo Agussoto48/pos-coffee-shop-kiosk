@@ -1,7 +1,7 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
 from pos_coffee_shop_kiosk.domain.models.value_objects.tax_option import TaxOption
-from pos_coffee_shop_kiosk.domain.models.value_objects.TaxDescription import TaxDescription
+from pos_coffee_shop_kiosk.domain.models.value_objects.tax_description import TaxDescription
 
 
 class AbstractTaxOptionRepository(ABC):

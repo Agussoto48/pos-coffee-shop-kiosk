@@ -1,6 +1,6 @@
 from __future__ import annotations
 from decimal import Decimal
-from pos_coffee_shop_kiosk.domain.models.value_objects.TaxDescription import TaxDescription
+from pos_coffee_shop_kiosk.domain.models.value_objects.tax_description import TaxDescription
 from pos_coffee_shop_kiosk.domain.models.value_objects.percentage import Percentage
 
 
