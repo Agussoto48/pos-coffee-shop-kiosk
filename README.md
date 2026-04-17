@@ -363,3 +363,26 @@ El sistema define interfaces separadas para productos, ventas, categorías, impu
 El principio de inversión de dependencias establece que los módulos de alto nivel no deben depender de módulos de bajo nivel, sino de abstracciones.
 
 En este sistema, los casos de uso y la lógica de aplicación dependen de interfaces como los repositorios abstractos, las interfaces de métodos de pago, los generadores de reportes y las factories abstractas. No al revés como sería el caso de depender directamente de `JsonProductRepository`, `CashPaymentMethod`, `CardPaymentMethod` o `TxtSummaryReportGenerator`.
+
+
+# UML
+
+>Se recomienda meterse directamente a las imagenes, se puede apreciar en el subdirectorio /docs ya que al ser muchos elementos el contenido necesita de zoom para una mejor apreciación a nivel espec
+ 
+## UML de la capa de dominio
+ 
+![Domain UML](docs/DomainUMLFINAL.png)
+ 
+## UML de la capa de aplicación
+ 
+![Application UML](docs/ApplicationUML.png)
+ 
+## UML de la capa de infraestructura
+ 
+![Infrastructure UML](docs/INFRAESTRUCTUREUML.png)
+ 
+## UML de la capa de presentación
+ 
+![Presentation UML](docs/presentationUML.png)
+ 
+
