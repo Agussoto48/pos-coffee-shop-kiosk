@@ -1,4 +1,4 @@
-from application.dtos.administrator_app_use_cases import AdministratorAppUseCases
+from pos_coffee_shop_kiosk.application.containers.administrator_app_use_cases import AdministratorAppUseCases
 
 
 class PosAdministratorApp:

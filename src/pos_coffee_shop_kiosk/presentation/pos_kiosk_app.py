@@ -1,4 +1,4 @@
-from pos_coffee_shop_kiosk.application.dtos.kiosk_app_use_cases import KioskAppUseCases
+from pos_coffee_shop_kiosk.application.containers.kiosk_app_use_cases import KioskAppUseCases
 
 
 class PosKioskApp:
