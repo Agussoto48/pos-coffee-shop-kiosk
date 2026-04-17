@@ -1,6 +1,6 @@
 from __future__ import annotations
 from uuid import UUID
-from pos_coffee_shop_kiosk.domain.models.dtos.cart_item import CartItem
+from pos_coffee_shop_kiosk.domain.models.entities.cart_item import CartItem
 from pos_coffee_shop_kiosk.domain.models.value_objects.money import Money
 
 

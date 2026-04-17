@@ -6,7 +6,7 @@ from pos_coffee_shop_kiosk.domain.models.value_objects.product_name import Produ
 from pos_coffee_shop_kiosk.domain.models.value_objects.product_category import ProductCategory
 from pos_coffee_shop_kiosk.domain.models.value_objects.sku import Sku
 from pos_coffee_shop_kiosk.domain.models.value_objects.money import Money
-from pos_coffee_shop_kiosk.domain.models.dtos.tax_option import TaxOption
+from pos_coffee_shop_kiosk.domain.models.value_objects.tax_option import TaxOption
 
 
 class Product:

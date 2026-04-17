@@ -1,6 +1,6 @@
 from __future__ import annotations
 from pos_coffee_shop_kiosk.domain.interfaces.abstract_tax_option_repository import AbstractTaxOptionRepository
-from pos_coffee_shop_kiosk.domain.models.dtos.tax_option import TaxOption
+from pos_coffee_shop_kiosk.domain.models.value_objects.tax_option import TaxOption
 from pos_coffee_shop_kiosk.domain.models.value_objects.TaxDescription import TaxDescription
 
 
