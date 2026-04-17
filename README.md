@@ -1,6 +1,14 @@
 # pos_coffee_shop_kiosk
 
-Sistema de punto de venta para cafeterías. 
+```
+Juan Gonzalez 
+Jason Montenegro
+Agustin Soto
+```
+
+
+>Sistema de punto de venta para cafeterías. 
+
 
 ---
 
