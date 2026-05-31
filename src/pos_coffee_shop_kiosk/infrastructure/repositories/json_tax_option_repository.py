@@ -6,14 +6,17 @@ from pos_coffee_shop_kiosk.domain.models.value_objects.tax_description import Ta
 
 class JsonTaxOptionRepository(AbstractTaxOptionRepository):
 
+    def __init__(self) -> None:
+        self._tax_options: dict[TaxDescription, TaxOption] = {}
+
     def add(self, tax_option: TaxOption) -> None:
-        pass
+        self._tax_options[tax_option.description()] = tax_option
 
     def remove(self, tax_option: TaxOption) -> None:
-        pass
+        self._tax_options.pop(tax_option.description(), None)
 
     def find_by_description(self, description: TaxDescription) -> TaxOption | None:
-        pass
+        return self._tax_options.get(description)
 
     def fetch_all_tax_options(self) -> list[TaxOption]:
-        pass
+        return list(self._tax_options.values())

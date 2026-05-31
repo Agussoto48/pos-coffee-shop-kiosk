@@ -4,43 +4,14 @@ from pos_coffee_shop_kiosk.application.dtos.register_product_request import Regi
 from pos_coffee_shop_kiosk.application.use_cases.inventory.register_product import RegisterProduct
 from pos_coffee_shop_kiosk.application.use_cases.inventory.find_product import FindProduct
 from pos_coffee_shop_kiosk.infrastructure.repositories.json_product_repository import JsonProductRepository
-
-
-
-#Clases para ver si agregar/encontrar funcionan correctamente
-#Luego se cambian para que funcione con las clases ya definidas
-class FakeCategoryRepository:
-    def add(self, category):
-        pass
-
-    def remove(self, category):
-        pass
-
-    def find_by_name(self, name):
-        return None
-
-    def fetch_all_categories(self):
-        return []
-
-
-class FakeTaxOptionRepository:
-    def add(self, tax_option):
-        pass
-
-    def remove(self, tax_option):
-        pass
-
-    def find_by_description(self, description):
-        return None
-
-    def fetch_all_tax_options(self):
-        return []
+from pos_coffee_shop_kiosk.infrastructure.repositories.json_product_category_repository import JsonProductCategoryRepository
+from pos_coffee_shop_kiosk.infrastructure.repositories.json_tax_option_repository import JsonTaxOptionRepository
 
 
 def main():
     product_repository = JsonProductRepository()
-    category_repository = FakeCategoryRepository()
-    tax_option_repository = FakeTaxOptionRepository()
+    category_repository = JsonProductCategoryRepository()
+    tax_option_repository = JsonTaxOptionRepository()
 
     register_product = RegisterProduct(
         product_repository,

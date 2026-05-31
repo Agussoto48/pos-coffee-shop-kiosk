@@ -6,14 +6,17 @@ from pos_coffee_shop_kiosk.domain.models.value_objects.category_name import Cate
 
 class JsonProductCategoryRepository(AbstractProductCategoryRepository):
 
+    def __init__(self) -> None:
+        self._categories: dict[CategoryName, ProductCategory] = {}
+    
     def add(self, category: ProductCategory) -> None:
-        pass
+        self._categories[category.name()] = category
 
     def remove(self, category: ProductCategory) -> None:
-        pass
+        self._categories.pop(category.name(), None)
 
     def find_by_name(self, name: CategoryName) -> ProductCategory | None:
-        pass
+        return self._categories.get(name)
 
     def fetch_all_categories(self) -> list[ProductCategory]:
-        pass
+        return list(self._categories.values())
