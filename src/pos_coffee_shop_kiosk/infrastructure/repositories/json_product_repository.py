@@ -27,3 +27,6 @@ class JsonProductRepository(AbstractProductRepository):
             for product in self._products.values()
             if product.category() == category
         ]
+    
+    def fetch_all_products(self) -> list[Product]:
+        return list(self._products.values())
