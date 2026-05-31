@@ -22,6 +22,12 @@ def print_product(product):
     print(f"Stock: {product.stock}")
     print("-" * 30)
 
+def product_exists(find_product, sku: str) -> bool:
+    try:
+        find_product.execute(sku)
+        return True
+    except ValueError:
+        return False
 
 def main():
     product_repository = JsonProductRepository()
@@ -78,6 +84,9 @@ def main():
 
             elif option == "2":
                 sku = input("Ingrese el SKU: ")
+                if not product_exists(find_product, sku):
+                    print("\nNo existe un producto con ese SKU.")
+                    continue
                 product = find_product.execute(sku)
 
                 print("\nPRODUCTO ENCONTRADO ")
@@ -86,7 +95,7 @@ def main():
             elif option == "3":
                 products = list_products.execute()
 
-                print("\n LISTA DE PRODUCTOS ")
+                print("\nLISTA DE PRODUCTOS ")
 
                 if not products:
                     print("No hay productos registrados.")
@@ -96,6 +105,9 @@ def main():
 
             elif option == "4":
                 sku = input("SKU del producto a modificar: ")
+                if not product_exists(find_product, sku):
+                    print("\nNo existe un producto con ese SKU.")
+                    continue
 
                 new_price_input = input("Nuevo precio, deje vacío si no desea cambiarlo: ")
                 stock_to_add_input = input("Stock a agregar, deje vacío si no desea agregar: ")
@@ -116,6 +128,9 @@ def main():
 
             elif option == "5":
                 sku = input("SKU del producto a eliminar: ")
+                if not product_exists(find_product, sku):
+                    print("\nNo existe un producto con ese SKU.")
+                    continue
                 remove_product.execute(sku)
 
                 print("\nProducto eliminado correctamente.")
