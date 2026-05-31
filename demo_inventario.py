@@ -52,91 +52,94 @@ def main():
 
         option = input("Seleccione una opción: ")
         
-        if option == "1":
-            name = input("Nombre: ")
-            description = input("Descripción: ")
-            category_name = input("Categoría: ")
-            sub_category_name = input("Subcategoría: ")
-            sku = input("SKU: ")
-            price = Decimal(input("Precio: "))
-            stock = Decimal(input("Stock: "))
+        try:
+            if option == "1":
+                name = input("Nombre: ")
+                description = input("Descripción: ")
+                category_name = input("Categoría: ")
+                sub_category_name = input("Subcategoría: ")
+                sku = input("SKU: ")
+                price = Decimal(input("Precio: "))
+                stock = Decimal(input("Stock: "))
 
-            request = RegisterProductRequest(
-                name=name,
-                description=description,
-                category_name=category_name,
-                sub_category_name=sub_category_name,
-                sku=sku,
-                price=price,
-                stock=stock,
-                tax_options=[],
-            )
+                request = RegisterProductRequest(
+                    name=name,
+                    description=description,
+                    category_name=category_name,
+                    sub_category_name=sub_category_name,
+                    sku=sku,
+                    price=price,
+                    stock=stock,
+                    tax_options=[],
+                )
 
-            register_product.execute(request)
-            print("\nProducto registrado correctamente.")
+                register_product.execute(request)
+                print("\nProducto registrado correctamente.")
 
-        elif option == "2":
-            sku = input("Ingrese el SKU: ")
-            product = find_product.execute(sku)
+            elif option == "2":
+                sku = input("Ingrese el SKU: ")
+                product = find_product.execute(sku)
 
-            print("\nPRODUCTO ENCONTRADO ")
-            print_product(product)
+                print("\nPRODUCTO ENCONTRADO ")
+                print_product(product)
 
-        elif option == "3":
-            products = list_products.execute()
+            elif option == "3":
+                products = list_products.execute()
 
-            print("\n LISTA DE PRODUCTOS ")
+                print("\n LISTA DE PRODUCTOS ")
 
-            if not products:
-                print("No hay productos registrados.")
+                if not products:
+                    print("No hay productos registrados.")
+                else:
+                    for product in products:
+                        print_product(product)
+
+            elif option == "4":
+                sku = input("SKU del producto a modificar: ")
+
+                new_price_input = input("Nuevo precio, deje vacío si no desea cambiarlo: ")
+                stock_to_add_input = input("Stock a agregar, deje vacío si no desea agregar: ")
+                stock_to_remove_input = input("Stock a remover, deje vacío si no desea remover: ")
+
+                new_price = Decimal(new_price_input) if new_price_input else None
+                stock_to_add = Decimal(stock_to_add_input) if stock_to_add_input else None
+                stock_to_remove = Decimal(stock_to_remove_input) if stock_to_remove_input else None
+
+                update_product.execute(
+                    product_sku=sku,
+                    new_price=new_price,
+                    stock_to_add=stock_to_add,
+                    stock_to_remove=stock_to_remove,
+                )
+
+                print("\nProducto actualizado correctamente.")
+
+            elif option == "5":
+                sku = input("SKU del producto a eliminar: ")
+                remove_product.execute(sku)
+
+                print("\nProducto eliminado correctamente.")
+
+            elif option == "6":
+                category_name = input("Categoría: ")
+                products = find_products_by_category.execute(category_name)
+
+                print(f"\nPRODUCTOS EN CATEGORÍA: {category_name} ")
+
+                if not products:
+                    print("No hay productos en esta categoría.")
+                else:
+                    for product in products:
+                        print_product(product)
+
+            elif option == "0":
+                print("Saliendo de la demo...")
+                break
+
             else:
-                for product in products:
-                    print_product(product)
-
-        elif option == "4":
-            sku = input("SKU del producto a modificar: ")
-
-            new_price_input = input("Nuevo precio, deje vacío si no desea cambiarlo: ")
-            stock_to_add_input = input("Stock a agregar, deje vacío si no desea agregar: ")
-            stock_to_remove_input = input("Stock a remover, deje vacío si no desea remover: ")
-
-            new_price = Decimal(new_price_input) if new_price_input else None
-            stock_to_add = Decimal(stock_to_add_input) if stock_to_add_input else None
-            stock_to_remove = Decimal(stock_to_remove_input) if stock_to_remove_input else None
-
-            update_product.execute(
-                product_sku=sku,
-                new_price=new_price,
-                stock_to_add=stock_to_add,
-                stock_to_remove=stock_to_remove,
-            )
-
-            print("\nProducto actualizado correctamente.")
-
-        elif option == "5":
-            sku = input("SKU del producto a eliminar: ")
-            remove_product.execute(sku)
-
-            print("\nProducto eliminado correctamente.")
-
-        elif option == "6":
-            category_name = input("Categoría: ")
-            products = find_products_by_category.execute(category_name)
-
-            print(f"\nPRODUCTOS EN CATEGORÍA: {category_name} ")
-
-            if not products:
-                print("No hay productos en esta categoría.")
-            else:
-                for product in products:
-                    print_product(product)
-
-        elif option == "0":
-            print("Saliendo de la demo...")
-            break
-
-        else:
-            print("Opción inválida.")
+                print("Opción inválida.")
+        except Exception as error:
+            print(f"\nOcurrió un Error")
         
 
 
