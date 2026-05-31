@@ -6,18 +6,20 @@ class Sku:
 
     def __init__(self, value: str) -> None:
         self._value = value
+        self._validate(value)
 
     def _validate(self, value: str) -> None:
-        pass
+        if not value or not value.strip():
+            raise ValueError("El SKU no puede estar vacío")
 
     def __eq__(self, other: Sku) -> bool:
-        pass
+        return isinstance(other, Sku) and self._value == other._value
 
     def __hash__(self) -> int:
-        pass
+        return hash(self._value)
 
     def __str__(self) -> str:
-        pass
+        return self._value
 
     def value(self) -> str:
-        pass
+        return self._value

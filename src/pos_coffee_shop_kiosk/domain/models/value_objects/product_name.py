@@ -6,18 +6,20 @@ class ProductName:
 
     def __init__(self, name: str) -> None:
         self._value = name
+        self._validate(name)
 
     def _validate(self, name: str) -> None:
-        pass
+        if not name or not name.strip():
+            raise ValueError("El nombre del producto no puede estar vacío")
 
     def __eq__(self, other: ProductName) -> bool:
-        pass
+        return isinstance(other, ProductName) and self._value == other._value
 
     def __hash__(self) -> int:
-        pass
+        return hash(self._value)
 
     def __str__(self) -> str:
-        pass
+        return self._value
 
     def value(self) -> str:
-        pass
+        return self._value
