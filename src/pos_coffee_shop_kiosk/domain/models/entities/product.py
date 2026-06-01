@@ -30,20 +30,24 @@ class Product:
         self._stock = stock
         self._tax_options = tax_options
 
-    # =========================
-    # MÉTODOS DE NEGOCIO
-    # =========================
+    # Metodos para Actualizar
 
     def update_price(self, new_price: Money) -> None:
         self._price = new_price
 
     def add_stock(self, amount: Decimal) -> None:
+        if amount <= 0:
+            raise ValueError("La cantidad a agregar debe ser mayor que cero")
+
         if self._stock is None:
             self._stock = amount
         else:
             self._stock += amount
 
     def remove_stock(self, amount: Decimal) -> None:
+        if amount <= 0:
+            raise ValueError("La cantidad a remover debe ser mayor que cero")
+        
         if self._stock is None:
             raise ValueError("Stock no definido")
 
@@ -52,9 +56,7 @@ class Product:
 
         self._stock -= amount
 
-    # =========================
-    # GETTERS
-    # =========================
+    #Gets
 
     def id(self) -> UUID:
         return self._id

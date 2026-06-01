@@ -28,6 +28,18 @@ def product_exists(find_product, sku: str) -> bool:
         return True
     except ValueError:
         return False
+    
+def read_decimal(message: str, optional: bool = False):
+    while True:
+        value = input(message)
+
+        if optional and value == "":
+            return None
+
+        try:
+            return Decimal(value)
+        except Exception:
+            print("Debe ingresar un número válido.")
 
 def main():
     product_repository = JsonProductRepository()
@@ -65,8 +77,8 @@ def main():
                 category_name = input("Categoría: ")
                 sub_category_name = input("Subcategoría: ")
                 sku = input("SKU: ")
-                price = Decimal(input("Precio: "))
-                stock = Decimal(input("Stock: "))
+                price = read_decimal("Precio: ")
+                stock = read_decimal("Stock: ")
 
                 request = RegisterProductRequest(
                     name=name,
@@ -108,14 +120,12 @@ def main():
                 if not product_exists(find_product, sku):
                     print("\nNo existe un producto con ese SKU.")
                     continue
+                product = find_product.execute(sku)
+                print_product(product)
 
-                new_price_input = input("Nuevo precio, deje vacío si no desea cambiarlo: ")
-                stock_to_add_input = input("Stock a agregar, deje vacío si no desea agregar: ")
-                stock_to_remove_input = input("Stock a remover, deje vacío si no desea remover: ")
-
-                new_price = Decimal(new_price_input) if new_price_input else None
-                stock_to_add = Decimal(stock_to_add_input) if stock_to_add_input else None
-                stock_to_remove = Decimal(stock_to_remove_input) if stock_to_remove_input else None
+                new_price = read_decimal("Nuevo precio, deje vacío si no desea cambiarlo: ", optional=True)
+                stock_to_add = read_decimal("Stock a agregar, deje vacío si no desea agregar: ", optional=True)
+                stock_to_remove = read_decimal("Stock a remover, deje vacío si no desea remover: ", optional=True)
 
                 update_product.execute(
                     product_sku=sku,
@@ -154,7 +164,7 @@ def main():
             else:
                 print("Opción inválida.")
         except Exception as error:
-            print(f"\nOcurrió un Error")
+            print(f"\nOcurrió un error: {error}")
         
 
 
