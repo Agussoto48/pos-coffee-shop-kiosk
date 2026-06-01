@@ -8,29 +8,39 @@ class Money:
     _currency: Currency
 
     def __init__(self, amount: Decimal, currency: Currency) -> None:
+        self._validate(amount, currency)
         self._amount = amount
         self._currency = currency
 
     def _validate(self, amount: Decimal, currency: Currency) -> None:
-        pass
+        if amount < 0:
+            raise ValueError("El monto no puede ser negativo")
 
     def __eq__(self, other: Money) -> bool:
-        pass
+        return (
+            isinstance(other, Money)
+            and self._amount == other._amount
+            and self._currency == other._currency
+        )
 
     def __hash__(self) -> int:
-        pass
+        return hash((self._amount, self._currency))
 
     def __str__(self) -> str:
-        pass
+        return f"{self._currency.value} {self._amount}"
 
     def add(self, other: Money) -> Money:
-        pass
+        if self._currency != other._currency:
+            raise ValueError("No se pueden sumar monedas diferentes")
+        return Money(self._amount + other._amount, self._currency)
 
     def subtract(self, other: Money) -> Money:
-        pass
+        if self._currency != other._currency:
+            raise ValueError("No se pueden restar monedas diferentes")
+        return Money(self._amount - other._amount, self._currency)
 
     def amount(self) -> Decimal:
-        pass
+         return self._amount
 
     def currency(self) -> Currency:
-        pass
+        return self._currency

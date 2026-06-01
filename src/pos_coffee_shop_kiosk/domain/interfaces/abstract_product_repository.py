@@ -22,3 +22,7 @@ class AbstractProductRepository(ABC):
     @abstractmethod
     def fetch_products_by_category(self, category: ProductCategory) -> list[Product]:
         pass
+    
+    @abstractmethod
+    def fetch_all_products(self) -> list[Product]:
+        pass
