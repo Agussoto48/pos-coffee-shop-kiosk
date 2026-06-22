@@ -10,14 +10,14 @@ class TaxDescription:
     def _validate(self, description: str) -> None:
         pass
 
-    def __eq__(self, other: TaxDescription) -> bool:
-        pass
+    def __eq__(self, other: object) -> bool:
+        return isinstance(other, TaxDescription) and self._text == other._text
 
     def __hash__(self) -> int:
-        pass
+        return self._text.__hash__()
 
     def __str__(self) -> str:
-        pass
+        return self._text
 
     def text(self) -> str:
-        pass
+        return self._text
