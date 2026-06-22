@@ -12,7 +12,7 @@ class Sku:
         if not value or not value.strip():
             raise ValueError("El SKU no puede estar vacío")
 
-    def __eq__(self, other: Sku) -> bool:
+    def __eq__(self, other: object) -> bool:
         return isinstance(other, Sku) and self._value == other._value
 
     def __hash__(self) -> int:
@@ -23,3 +23,10 @@ class Sku:
 
     def value(self) -> str:
         return self._value
+    
+    def to_dict(self):
+        return {"__type__": "Sku", "value": self._value}
+    
+    @classmethod
+    def from_dict(cls, dict):
+        return cls(dict["value"])

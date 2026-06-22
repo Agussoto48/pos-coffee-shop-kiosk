@@ -16,7 +16,7 @@ class Money:
         if amount < 0:
             raise ValueError("El monto no puede ser negativo")
 
-    def __eq__(self, other: Money) -> bool:
+    def __eq__(self, other: object) -> bool:
         return (
             isinstance(other, Money)
             and self._amount == other._amount
@@ -44,3 +44,14 @@ class Money:
 
     def currency(self) -> Currency:
         return self._currency
+    
+    def to_dict(self):
+        return {
+            "__type__": "Money",
+            "amount": str(self._amount),
+            "currency": self._currency.value
+        }
+
+    @classmethod
+    def from_dict(cls, d) -> Money:
+        return cls(Decimal(str(d["amount"])), Currency(d["currency"]))

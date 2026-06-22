@@ -12,7 +12,7 @@ class ProductName:
         if not name or not name.strip():
             raise ValueError("El nombre del producto no puede estar vacío")
 
-    def __eq__(self, other: ProductName) -> bool:
+    def __eq__(self, other: object) -> bool:
         return isinstance(other, ProductName) and self._value == other._value
 
     def __hash__(self) -> int:
@@ -23,3 +23,10 @@ class ProductName:
 
     def value(self) -> str:
         return self._value
+    
+    def to_dict(self):
+        return {"__type__": "ProductName", "value": self._value}
+    
+    @classmethod
+    def from_dict(cls, dict):
+        return cls(dict["value"])

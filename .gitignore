@@ -26,3 +26,8 @@ build/
 # Dependencies
 .ruff_cache/
 data/
+
+# pseudo-databases
+products.json
+categories.json
+tax_options.json

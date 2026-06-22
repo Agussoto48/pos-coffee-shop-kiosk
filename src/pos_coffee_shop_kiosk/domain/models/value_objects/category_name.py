@@ -20,3 +20,10 @@ class CategoryName:
 
     def value(self) -> str:
         return self._value
+
+    def to_dict(self):
+        return {"__type__": "CategoryName", "value": self._value}
+    
+    @classmethod
+    def from_dict(cls, dict):
+        return cls(dict["value"])

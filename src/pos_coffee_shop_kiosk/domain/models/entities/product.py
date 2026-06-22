@@ -1,6 +1,7 @@
 from __future__ import annotations
 from decimal import Decimal
 from uuid import UUID
+from typing import cast
 
 from pos_coffee_shop_kiosk.domain.models.value_objects.product_name import ProductName
 from pos_coffee_shop_kiosk.domain.models.value_objects.product_category import ProductCategory
@@ -81,3 +82,29 @@ class Product:
 
     def tax_options(self) -> list[TaxOption]:
         return self._tax_options
+
+    def to_dict(self) -> dict[str, object]:
+        return {
+            "__type__": "Product",
+            "id": str(self._id),
+            "name": self._name.to_dict(),
+            "description": self._description,
+            "category": self._category.to_dict(),
+            "sku": self._sku.to_dict(),
+            "price": self._price.to_dict(),
+            "stock": str(self._stock) if self._stock is not None else None,
+            "tax_options": [t.to_dict() for t in self._tax_options],
+        }
+
+    @classmethod
+    def from_dict(cls, d: dict[str, object]) -> Product:
+        return cls(
+            id=UUID(str(d["id"])),
+            name=cast(ProductName, d["name"]),
+            description=str(d["description"]),
+            category=cast(ProductCategory, d["category"]),
+            sku=cast(Sku, d["sku"]),
+            price=cast(Money, d["price"]),
+            stock=Decimal(str(d["stock"])) if d.get("stock") is not None else None,
+            tax_options=cast(list[TaxOption], d["tax_options"]),
+        )
