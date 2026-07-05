@@ -12,13 +12,17 @@ class CartItem:
         self._quantity = quantity
 
     def update_quantity(self, quantity: int) -> None:
-        pass
+        if quantity <= 0:
+            raise ValueError("La cantidad debe ser mayor que cero")
+        
+        self._quantity = quantity
 
     def get_subtotal(self) -> Money:
-        pass
+        total_amount = self._product.price().amount() * self._quantity
+        return Money(total_amount, self._product.price().currency())
 
     def product(self) -> Product:
-        pass
+        return self._product
 
     def quantity(self) -> int:
-        pass
+        return self._quantity
