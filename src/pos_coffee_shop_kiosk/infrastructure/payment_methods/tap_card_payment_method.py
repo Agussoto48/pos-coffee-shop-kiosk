@@ -1,7 +1,6 @@
 from __future__ import annotations
 from pos_coffee_shop_kiosk.domain.interfaces.abstract_payment_method import AbstractPaymentMethod
 from pos_coffee_shop_kiosk.domain.models.value_objects.money import Money
-from pos_coffee_shop_kiosk.domain.models.entities.sale import Sale
 
 
 class TapCardPaymentMethod(AbstractPaymentMethod):
@@ -10,5 +9,11 @@ class TapCardPaymentMethod(AbstractPaymentMethod):
         self._card_number = card_number
         self._card_holder = card_holder
 
-    def pay(self, amount_due: Money) -> Sale:
-        pass
+    def pay(self, amount_due: Money) -> None:
+        if not self._card_number or len(self._card_number) < 4:
+            raise ValueError("Número de tarjeta inválido")
+
+        if not self._card_holder:
+            raise ValueError("El titular de la tarjeta es requerido")
+
+        print("Pago sin contacto aprobado.")

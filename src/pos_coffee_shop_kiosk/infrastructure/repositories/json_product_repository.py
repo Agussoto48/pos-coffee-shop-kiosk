@@ -50,3 +50,10 @@ class JsonProductRepository(AbstractProductRepository):
     
     def fetch_all_products(self) -> list[Product]:
         return list(self._products.values())
+    
+    def update(self, product: Product) -> None:
+        if product.sku() not in self._products:
+            raise ValueError("No existe un producto con ese SKU")
+
+        self._products[product.sku()] = product
+        self._save()
