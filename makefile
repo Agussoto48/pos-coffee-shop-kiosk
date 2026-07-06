@@ -1,2 +1,2 @@
 run_inventario: 
-	@PYTHONPATH=src python3 demo_inventario.py
+	@PYTHONPATH=src python3 main.py

@@ -31,7 +31,7 @@ class PhysicalSale(Sale):
 
     def complete(self) -> None:
         print(f"[PhysicalSale] Generando ticket fisico para venta {self._sale_id}...")
-        print("[PhysicalSale] Enviando comando de impresion a la impresora termica...")
+        print("[PhysicalSale] Enviando comando de impresion a la impresora...")
         super().complete()
         print(f"[PhysicalSale] Venta {self._sale_id} completada")
 
