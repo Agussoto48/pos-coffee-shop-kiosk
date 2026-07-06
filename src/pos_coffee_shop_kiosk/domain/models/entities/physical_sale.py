@@ -31,11 +31,11 @@ class PhysicalSale(Sale):
 
     def complete(self) -> None:
         print(f"[PhysicalSale] Generando ticket fisico para venta {self._sale_id}...")
-        print(f"[PhysicalSale] Enviando comando de impresion a la impresora termica...")
-        self._status = SaleStatus.COMPLETED
+        print("[PhysicalSale] Enviando comando de impresion a la impresora termica...")
+        super().complete()
         print(f"[PhysicalSale] Venta {self._sale_id} completada")
 
     def fail(self) -> None:
         print(f"[PhysicalSale] Error al imprimir el ticket fisico de la venta {self._sale_id}.")
-        self._status = SaleStatus.FAILED
+        super().fail()
         print(f"[PhysicalSale] Venta {self._sale_id} marcada como fallida")

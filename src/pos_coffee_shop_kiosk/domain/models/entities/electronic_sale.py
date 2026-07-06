@@ -31,11 +31,11 @@ class ElectronicSale(Sale):
 
     def complete(self) -> None:
         print(f"[ElectronicSale] Generando factura electronica para venta {self._sale_id}...")
-        print(f"[ElectronicSale] Enviando XML al Ministerio de Hacienda...")
-        self._status = SaleStatus.COMPLETED
+        print("[ElectronicSale] Enviando XML al Ministerio de Hacienda...")
+        super().complete()
         print(f"[ElectronicSale] Venta {self._sale_id} completada")
 
     def fail(self) -> None:
         print(f"[ElectronicSale] Error al procesar la factura electronica de la venta {self._sale_id}.")
-        self._status = SaleStatus.FAILED
+        super().fail()
         print(f"[ElectronicSale] Venta {self._sale_id} marcada como fallida")
