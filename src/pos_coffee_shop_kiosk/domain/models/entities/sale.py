@@ -1,4 +1,5 @@
 from __future__ import annotations
+from abc import ABC, abstractmethod
 from uuid import UUID
 from datetime import datetime
 
@@ -8,7 +9,7 @@ from pos_coffee_shop_kiosk.domain.models.value_objects.money import Money
 from pos_coffee_shop_kiosk.domain.enums.sale_status import SaleStatus
 
 
-class Sale:
+class Sale(ABC):
     _sale_id: UUID
     _cart: ShoppingCart
     _payment_method: PaymentMethodType
@@ -25,7 +26,7 @@ class Sale:
         amount_paid: Money,
         change: Money | None = None,
         status: SaleStatus = SaleStatus.PENDING,
-        timestamp: datetime = datetime.now(),
+        timestamp: datetime | None = None,
     ) -> None:
         self._sale_id = sale_id
         self._cart = cart
@@ -33,31 +34,33 @@ class Sale:
         self._amount_paid = amount_paid
         self._change = change
         self._status = status
-        self._timestamp = timestamp
+        self._timestamp = timestamp or datetime.now()
 
+    @abstractmethod
     def complete(self) -> None:
         pass
 
+    @abstractmethod
     def fail(self) -> None:
         pass
 
     def sale_id(self) -> UUID:
-        pass
+        return self._sale_id
 
     def cart(self) -> ShoppingCart:
-        pass
+        return self._cart
 
     def payment_method(self) -> PaymentMethodType:
-        pass
+        return self._payment_method
 
     def amount_paid(self) -> Money:
-        pass
+        return self._amount_paid
 
     def change(self) -> Money | None:
-        pass
+        return self._change
 
     def status(self) -> SaleStatus:
-        pass
+        return self._status
 
     def timestamp(self) -> datetime:
-        pass
+        return self._timestamp
