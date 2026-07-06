@@ -42,7 +42,7 @@ def read_decimal(message: str, optional: bool = False):
             print("Debe ingresar un número válido.")
 
 def main():
-    product_repository = JsonProductRepository()
+    product_repository = JsonProductRepository("cartago_db.json")
     category_repository = JsonProductCategoryRepository()
     tax_option_repository = JsonTaxOptionRepository()
 

@@ -11,6 +11,14 @@ from pos_coffee_shop_kiosk.domain.states.failure_sale_state import FailureSaleSt
 
 
 class Sale:
+    _sale_id: UUID
+    _cart: ShoppingCart
+    _payment_method: PaymentMethodType
+    _amount_paid: Money
+    _change: Money | None
+    _status: SaleStatus
+    _timestamp: datetime
+
     def __init__(
         self,
         sale_id: UUID,
@@ -27,7 +35,7 @@ class Sale:
         self._amount_paid = amount_paid
         self._change = change
         self._status = status
-        self._timestamp = timestamp if timestamp is not None else datetime.now()
+        self._timestamp = timestamp or datetime.now()
 
         self._pending_state = PendingSaleState()
         self._success_state = SuccessSaleState()

@@ -1,0 +1,252 @@
+[
+  {
+    "__type__": "Product",
+    "id": "587bbe2f-f7fb-4f9a-91e4-c13caef71b0f",
+    "name": {
+      "__type__": "ProductName",
+      "value": "cafe late"
+    },
+    "description": "cafe 1820 con leche dos pinos",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "cafe",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "19"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "2000",
+      "currency": "CRC"
+    },
+    "stock": "999",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "856864eb-6128-4ec4-9adf-1cbd8095bf8d",
+    "name": {
+      "__type__": "ProductName",
+      "value": "cafe americano"
+    },
+    "description": "cafe negro 1820 recien colado",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "cafe",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "20"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1250",
+      "currency": "CRC"
+    },
+    "stock": "999",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "7c72b179-535b-408d-aa7b-74f08fa3addc",
+    "name": {
+      "__type__": "ProductName",
+      "value": "espresso doble"
+    },
+    "description": "shot doble de espresso 1820",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "cafe",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "24"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1400",
+      "currency": "CRC"
+    },
+    "stock": "999",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "1527f26e-b27a-4aa8-9a39-4b3140205202",
+    "name": {
+      "__type__": "ProductName",
+      "value": "frappe de cafe"
+    },
+    "description": "cafe frio batido con hielo y leche",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "cafe",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "25"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "2500",
+      "currency": "CRC"
+    },
+    "stock": "400",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "bdfca1a6-0c24-441e-a02a-c75676da71dc",
+    "name": {
+      "__type__": "ProductName",
+      "value": "te verde"
+    },
+    "description": "te verde importado",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "te",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "26"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1600",
+      "currency": "CRC"
+    },
+    "stock": "300",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "4dd34629-2f96-4e96-a1f3-e6a4beaef1df",
+    "name": {
+      "__type__": "ProductName",
+      "value": "croissant de almendra"
+    },
+    "description": "croissant relleno de crema de almendra",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "panaderia",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "106"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1800",
+      "currency": "CRC"
+    },
+    "stock": "150",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "a9bbfd9f-ae8d-4551-9b88-ec204b69fda9",
+    "name": {
+      "__type__": "ProductName",
+      "value": "pan de queso"
+    },
+    "description": "pan salado relleno de queso",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "panaderia",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "107"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1200",
+      "currency": "CRC"
+    },
+    "stock": "220",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "3e00ac85-e179-4f4a-a801-cc86cda76794",
+    "name": {
+      "__type__": "ProductName",
+      "value": "cheesecake (porcion)"
+    },
+    "description": "porcion individual de cheesecake de fresa",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "reposteria",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "108"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "2200",
+      "currency": "CRC"
+    },
+    "stock": "50",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "54954f98-a445-4f83-8b80-78df671453ab",
+    "name": {
+      "__type__": "ProductName",
+      "value": "muffin de arandanos"
+    },
+    "description": "muffin casero con arandanos frescos",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "panaderia",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "109"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1400",
+      "currency": "CRC"
+    },
+    "stock": "180",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "e105a04e-98d5-4072-9d20-b8fc01303524",
+    "name": {
+      "__type__": "ProductName",
+      "value": "sandwich de jamon y queso"
+    },
+    "description": "sandwich tostado en pan artesanal",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "panaderia",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "110"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "2400",
+      "currency": "CRC"
+    },
+    "stock": "100",
+    "tax_options": []
+  }
+]
