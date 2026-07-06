@@ -1,0 +1,252 @@
+[
+  {
+    "__type__": "Product",
+    "id": "96236cd6-f11c-44b3-ab3d-7bfedbb8b067",
+    "name": {
+      "__type__": "ProductName",
+      "value": "cafe late"
+    },
+    "description": "cafe 1820 con leche dos pinos",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "cafe",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "19"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1900",
+      "currency": "CRC"
+    },
+    "stock": "999",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "0b7f7439-3719-49ab-94b3-d94527a798a6",
+    "name": {
+      "__type__": "ProductName",
+      "value": "cafe americano"
+    },
+    "description": "cafe negro 1820 recien colado",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "cafe",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "20"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1150",
+      "currency": "CRC"
+    },
+    "stock": "999",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "141d5eb1-01d2-445f-b51b-9484f984cf26",
+    "name": {
+      "__type__": "ProductName",
+      "value": "cafe con leche tradicional"
+    },
+    "description": "cafe de tueste local con leche caliente",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "cafe",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "27"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1300",
+      "currency": "CRC"
+    },
+    "stock": "999",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "3bb531d8-85ae-4623-8607-7614825c3aa5",
+    "name": {
+      "__type__": "ProductName",
+      "value": "chocolate caliente"
+    },
+    "description": "chocolate artesanal con leche",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "cafe",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "28"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1700",
+      "currency": "CRC"
+    },
+    "stock": "400",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "45c6fcfc-2d4c-49bb-bdb5-c3defe12c26a",
+    "name": {
+      "__type__": "ProductName",
+      "value": "te manzanilla"
+    },
+    "description": "infusion de manzanilla natural",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "te",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "29"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1400",
+      "currency": "CRC"
+    },
+    "stock": "300",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "d3879d39-05d9-4df8-9f49-eca56eaba9d9",
+    "name": {
+      "__type__": "ProductName",
+      "value": "pan casero"
+    },
+    "description": "pan casero horneado en leña",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "panaderia",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "111"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "900",
+      "currency": "CRC"
+    },
+    "stock": "300",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "fd5f4867-058c-41bf-b067-1435631cb21f",
+    "name": {
+      "__type__": "ProductName",
+      "value": "empanada de carne"
+    },
+    "description": "empanada horneada rellena de carne molida",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "panaderia",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "112"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1400",
+      "currency": "CRC"
+    },
+    "stock": "180",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "99e0a45e-ebfa-4c3c-8f22-1669eb2d6a13",
+    "name": {
+      "__type__": "ProductName",
+      "value": "tres leches (porcion)"
+    },
+    "description": "porcion individual de pastel tres leches",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "reposteria",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "113"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1900",
+      "currency": "CRC"
+    },
+    "stock": "70",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "6ab007cf-ce3b-4c9c-bf5e-1a8175aa5d03",
+    "name": {
+      "__type__": "ProductName",
+      "value": "rosquillas cartaginesas"
+    },
+    "description": "rosquillas tradicionales de queso",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "panaderia",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "114"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1000",
+      "currency": "CRC"
+    },
+    "stock": "250",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "08ffa5fb-2f50-49cd-b991-de4cd71aada6",
+    "name": {
+      "__type__": "ProductName",
+      "value": "galletas de avena"
+    },
+    "description": "galletas caseras de avena y pasas",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "reposteria",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "115"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1100",
+      "currency": "CRC"
+    },
+    "stock": "200",
+    "tax_options": []
+  }
+]

@@ -8,21 +8,22 @@ from pos_coffee_shop_kiosk.domain.models.value_objects.product_category import P
 
 
 class JsonProductRepository(AbstractProductRepository):
-    __FILE_PATH : str = "products.json"
+    _filename:str = ""
 
-    def __init__(self) -> None:
+    def __init__(self, filename: str) -> None:
+        self._filename = filename
         try:
-            with open(JsonProductRepository.__FILE_PATH) as f:
+            with open(self._filename) as f:
                 products: list[Product] = \
                     json.load(f, object_hook=json_encoder_decoder.decode)
                 self._products = {p.sku() : p for p in products}
         except FileNotFoundError:
-            with open(JsonProductRepository.__FILE_PATH, "w") as f:
+            with open(self._filename, "w") as f:
                 json.dump([], f)
             self._products: dict[Sku, Product] = {}
 
     def _save(self) -> None:
-        with open(JsonProductRepository.__FILE_PATH, "w") as f:
+        with open(self._filename, "w") as f:
             json.dump(list(self._products.values()), f,\
                       default=json_encoder_decoder.encode)
 

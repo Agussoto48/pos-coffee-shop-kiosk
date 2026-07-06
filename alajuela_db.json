@@ -1,0 +1,252 @@
+[
+  {
+    "__type__": "Product",
+    "id": "e1805db6-9e52-45b2-8dfa-9d7a3c7862c6",
+    "name": {
+      "__type__": "ProductName",
+      "value": "cafe late"
+    },
+    "description": "cafe 1820 con leche dos pinos",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "cafe",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "19"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1950",
+      "currency": "CRC"
+    },
+    "stock": "999",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "8c484ffa-49ea-4541-9287-ead82893fb4e",
+    "name": {
+      "__type__": "ProductName",
+      "value": "cafe americano"
+    },
+    "description": "cafe negro 1820 recien colado",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "cafe",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "20"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1200",
+      "currency": "CRC"
+    },
+    "stock": "999",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "e78eaaec-6144-4736-b9d2-b1ced9535b39",
+    "name": {
+      "__type__": "ProductName",
+      "value": "capuchino"
+    },
+    "description": "espresso con leche vaporizada y espuma",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "cafe",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "21"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "2100",
+      "currency": "CRC"
+    },
+    "stock": "999",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "8b45580c-3b6a-4faa-8659-e5946c74c9c7",
+    "name": {
+      "__type__": "ProductName",
+      "value": "mocha"
+    },
+    "description": "cafe con chocolate y leche",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "cafe",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "22"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "2300",
+      "currency": "CRC"
+    },
+    "stock": "500",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "a3bac748-df04-4022-a423-c5bd62ad4a42",
+    "name": {
+      "__type__": "ProductName",
+      "value": "te chai"
+    },
+    "description": "te chai especiado con leche",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "te",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "23"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1800",
+      "currency": "CRC"
+    },
+    "stock": "300",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "cd217750-bddd-4a27-bc39-f308bcda0c82",
+    "name": {
+      "__type__": "ProductName",
+      "value": "croissant de mantequilla"
+    },
+    "description": "croissant artesanal horneado diario",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "panaderia",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "101"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1500",
+      "currency": "CRC"
+    },
+    "stock": "200",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "d73c54db-ae09-4f17-8a6a-dc1838fa6608",
+    "name": {
+      "__type__": "ProductName",
+      "value": "pan de coco"
+    },
+    "description": "pan dulce relleno de coco",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "panaderia",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "102"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1100",
+      "currency": "CRC"
+    },
+    "stock": "250",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "9b1d6cf3-2afc-41dc-bb03-bdd6730c13bf",
+    "name": {
+      "__type__": "ProductName",
+      "value": "empanada de queso"
+    },
+    "description": "empanada horneada de queso mozzarella",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "panaderia",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "103"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1300",
+      "currency": "CRC"
+    },
+    "stock": "180",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "a89437bd-f794-4d1a-928c-30a7a8e0d75e",
+    "name": {
+      "__type__": "ProductName",
+      "value": "torta de chocolate (porcion)"
+    },
+    "description": "porcion individual de torta de chocolate",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "reposteria",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "104"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1900",
+      "currency": "CRC"
+    },
+    "stock": "60",
+    "tax_options": []
+  },
+  {
+    "__type__": "Product",
+    "id": "04ffcbf1-3b29-4f00-9a2f-ec8ceff906ec",
+    "name": {
+      "__type__": "ProductName",
+      "value": "bagel con queso crema"
+    },
+    "description": "bagel tostado con queso crema",
+    "category": {
+      "__type__": "ProductCategory",
+      "name": "panaderia",
+      "parent": null
+    },
+    "sku": {
+      "__type__": "Sku",
+      "value": "105"
+    },
+    "price": {
+      "__type__": "Money",
+      "amount": "1700",
+      "currency": "CRC"
+    },
+    "stock": "120",
+    "tax_options": []
+  }
+]
