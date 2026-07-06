@@ -34,3 +34,5 @@ class UpdateProduct:
         if stock_to_remove is not None:
             product.remove_stock(stock_to_remove)
         
+        self.product_repository.update(product)
+        

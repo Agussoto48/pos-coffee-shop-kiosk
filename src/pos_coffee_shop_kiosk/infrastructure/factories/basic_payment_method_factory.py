@@ -22,4 +22,9 @@ class BasicPaymentMethodFactory(AbstractPaymentMethodFactory):
         methodType: PaymentMethodType,
         clientDetails: ClientPaymentDetails
     ) -> AbstractPaymentMethod:
-        pass
+        factory = self.registry.get(methodType)
+
+        if factory is None:
+            raise ValueError("Método de pago no soportado")
+
+        return factory.create(clientDetails)

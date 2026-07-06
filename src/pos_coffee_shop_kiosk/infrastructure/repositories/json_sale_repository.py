@@ -5,15 +5,17 @@ from pos_coffee_shop_kiosk.domain.models.entities.sale import Sale
 
 
 class JsonSaleRepository(AbstractSaleRepository):
+    def __init__(self) -> None:
+        self._sales: dict[UUID, Sale] = {}
 
     def add(self, sale: Sale) -> None:
-        pass
+        self._sales[sale.sale_id()] = sale
 
     def remove(self, sale_id: UUID) -> None:
-        pass
+        self._sales.pop(sale_id, None)
 
     def find_by_id(self, sale_id: UUID) -> Sale | None:
-        pass
+        return self._sales.get(sale_id)
 
     def fetch_all_sales(self) -> list[Sale]:
-        pass
+        return list(self._sales.values())
